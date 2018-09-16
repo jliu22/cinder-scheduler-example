@@ -16,7 +16,7 @@ LOG = logging.getLogger(__name__)
 class Dispersion(filter_scheduler.FilterScheduler):
 
     def schedule_create_volume(self, context, request_spec, filter_properties):
-        """Use volume type in extra_specs to identify tenant for tenant isolation"""
+        """Use volume type extra_specs to store tenant info for tenant isolation"""
 
         volume_id = request_spec.get('volume_id')
         snapshot_id = request_spec.get('snapshot_id')
